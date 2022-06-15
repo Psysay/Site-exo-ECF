@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Acme&family=Caveat:wght@400;500;600;700&family=Fresca&family=Teko:wght@300;400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style_inscription.css">
+  <link rel="icon" type="image/x-icon" href="images/logo.png" style="width:100%">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breaker Inscription</title>
+  <meta name="description" content="Organiser un escape game entre amis ou pour les entreprises" />
+</head>
+<body>
+    <header id="header_style">
+        <h1>BREAKER</h1>
+        <button href="inscription" href="form_inscription.html"> Inscription/Login</button>
+        <div><img src="img/logo.png" alt="logo_breaker" href="index.html"></div>
+        
+      </header>
+    
+      <section class="bandeau">
+        <H2>Un Escape GAME à deux pas de Paris.</H2>
+      </section>
+      
+      <section id="Formulaire">
+        <div class="page-content">
+            <div class="form-v9-content" style="background-image: url('img/Sherlock02.jpg')">
+                <form class="form-detail" action="#" method="get">
+                    <h2>Inscription</h2>
+                    <div class="form-row-total">
+                        <div class="form-row">
+                            <input type="text" name="full-name" id="full-name" class="input-text" placeholder="Pseudo" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="your-email" id="your-email" class="input-text" placeholder="Votre Email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+                        </div>
+                    </div>
+                    <div class="form-row-total">
+                        <div class="form-row">
+                            <input type="password" name="password" id="password" class="input-text" placeholder="Mot de Passe" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="password" name="comfirm-password" id="comfirm-password" class="input-text" placeholder="Confirmez le Mot de Passe" required>
+                        </div>
+                    </div>
+                    <div class="form-row-last">
+                        <input type="button" name="register" class="register" value="Validez">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+      </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
