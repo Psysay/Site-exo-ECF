@@ -81,80 +81,82 @@ artmyslide3.onmouseout = function() {
     /* */
 
 
+//Validation de formulaire avec regex
 function getForm() {
-    // Ajout des Regex
-    let form = document.querySelector(".form-detail");
+  // Ajout des Regex
+  let form = document.querySelector(".cart__order__form");
 
-    //Création des expressions régulières
-    let emailRegExp = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$');
-    let charRegExp = new RegExp("^[a-zA-Z ,.'-]+$");
-    let addressRegExp = new RegExp("^[0-9]{1,3}(?:(?:[,. ]){1}[-a-zA-Zàâäéèêëïîôöùûüç]+)+");
+  //Création des expressions régulières
+  let pseudoRegExp = new RegExp("^([a-zA-Z0-9-_]{5,40})$");
+  let passwordRegExp = new RegExp ("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,30})");
+  let emailRegExp = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$');
+  
+  
 
-    // Ecoute de la modification du pseudo
-    form.firstName.addEventListener('change', function () {
-        validFirstName(this);
-    });
+  // Ecoute de la modification du pseudo
+  form.pseudo.addEventListener('change', function () {
+      validPseudo(this);
+  });
 
-    // Ecoute de la modification du mail
-        form.email.addEventListener('change', function () {
-          validEmail(this);
-      });
+  // Ecoute de la modification du mot de passe
+  form.password.addEventListener('change', function () {
+      validPassword(this);
+  });
 
-    // Ecoute de la modification du password
-    form.password.addEventListener('change', function () {
-        validPassword(this);
-    });
+  // Ecoute de la modification de la confirmation de passe
+  form.passwordBis.addEventListener('change', function () {
+      validPasswordBis(this);
+  });
 
-    // Ecoute de la modification du ville
-    form.checkPassword.addEventListener('change', function () {
-        validConfirmPassword(this);
-    });
+  // Ecoute de la modification de l'email
+  form.email.addEventListener('change', function () {
+      validEmail(this);
+  });
 
+  //validation du pseudo
+  const validPseudo = function (inputPseudo) {
+      let pseudoErrorMsg = inputPseudo.nextElementSibling;
 
+      if (pseudoRegExp.test(inputPseudo.value)) {
+          pseudoErrorMsg.innerHTML = '';
+      } else {
+          pseudoErrorMsg.innerHTML = 'Votre pseudo doit contenir entre 5 et 40 caractères.';
+      }
+  };
 
-    //validation du pseudo
-    const validFirstName = function (inputFirstName) {
-        let firstNameErrorMsg = inputFirstName.nextElementSibling;
+  //validation du mot de passe
+  const validPassword = function (inputPassword) {
+      let passwordErrorMsg = inputPassword.nextElementSibling;
 
-        if (charRegExp.test(inputFirstName.value)) {
-            firstNameErrorMsg.innerHTML = '';
-        } else {
-            firstNameErrorMsg.innerHTML = 'Veuillez renseigner ce champ.';
-        }
-    };
+      if (passwordRegExp.test(inputPassword.value)) {
+          passwordErrorMsg.innerHTML = '';
+      } else {
+          passwordErrorMsg.innerHTML = "Votre mot de passe doit contenir au moins une majuscule, une minuscule ainsi qu'un chiffre et un caractère spécial et doit faire entre 8 et 30 caractères.";
+      }
+  };
 
-//validation de l'email
-const validEmail = function (inputEmail) {
-  let emailErrorMsg = inputEmail.nextElementSibling;
+  //validation de la validation de mot de passe
+  const validPasswordBis = function (inputPasswordBis) {
+      let passwordBisErrorMsg = inputPasswordBis.nextElementSibling;
 
-  if (emailRegExp.test(inputEmail.value)) {
-      emailErrorMsg.innerHTML = '';
-  } else {
-      emailErrorMsg.innerHTML = 'Veuillez renseigner votre email.';
-  }
-};
+      if (passwordRegExp.test(inputPasswordBis.value)) {
+          passwordBisErrorMsg.innerHTML = '';
+      } else {
+          passwordBisErrorMsg.innerHTML = 'Vos mot de passe ne correspondent pas. Veuillez ré-essayer.';
+      }
+  };
+
+  //validation de l'email
+  const validEmail = function (inputEmail) {
+      let emailErrorMsg = inputEmail.nextElementSibling;
+
+      if (emailRegExp.test(inputEmail.value)) {
+          emailErrorMsg.innerHTML = '';
+      } else {
+          emailErrorMsg.innerHTML = 'Veuillez renseigner votre email.';
+      }
+  };
 }
-
-    //validation de PassWord
-    const validPassword = function (inputAddress) {
-        let addressErrorMsg = inputAddress.nextElementSibling;
-
-        if (addressRegExp.test(inputAddress.value)) {
-            addressErrorMsg.innerHTML = '';
-        } else {
-            addressErrorMsg.innerHTML = 'Veuillez renseigner ce champ.';
-        }
-    };
-
-    //validation de ConfirmPassword
-    const validConfirmPassword = function (inputCity) {
-        let cityErrorMsg = inputCity.nextElementSibling;
-
-        if (charRegExp.test(inputCity.value)) {
-            cityErrorMsg.innerHTML = '';
-        } else {
-            cityErrorMsg.innerHTML = 'Veuillez renseigner ce champ.';
-        }
-    };
+getForm();
 
     

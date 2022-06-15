@@ -29,35 +29,32 @@
         <H2>Un Escape GAME à deux pas de Paris.</H2>
       </section>
       
-      <section id="Formulaire">
-        <div class="page-content">
-            <div class="form-v9-content" style="background-image: url('img/Sherlock02.jpg')">
-                <form class="form-detail" action="#" method="get">
-                    <h2>Inscription</h2>
-                    <div class="form-row-total">
-                        <div class="form-row">
-                            <input type="text" name="full-name" id="full-name" class="input-text" placeholder="Pseudo" required>
-                        </div>
-                        <div class="form-row">
-                            <input type="text" name="your-email" id="your-email" class="input-text" placeholder="Votre Email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
-                        </div>
-                    </div>
-                    <div class="form-row-total">
-                        <div class="form-row">
-                            <input type="password" name="password" id="password" class="input-text" placeholder="Mot de Passe" required>
-                        </div>
-                        <div class="form-row">
-                            <input type="password" name="comfirm-password" id="comfirm-password" class="input-text" placeholder="Confirmez le Mot de Passe" required>
-                        </div>
-                    </div>
-                    <div class="form-row-last">
-                        <input type="button" name="register" class="register" value="Validez">
-                    </div>
-                </form>
-            </div>
+      <form method="get" class="cart__order__form">
+        <div class="cart__order__form__question">
+          <label for="pseudo">Pseudo :</label>
+          <input type="text" name="pseudo" id="pseudo" required>
+          <p id="pseudoErrorMsg"><!-- ci est un message d'erreur --></p>
         </div>
-
-      </section>
+        <div class="cart__order__form__question">
+          <label for="password">Mot de passe :</label>
+          <input type="password" name="password" id="password" required>
+          <p id="passwordErrorMsg"></p>
+        </div>
+        <div class="cart__order__form__question">
+          <label for="passwordBis">Confirmation de mot de passe :</label>
+          <input type="password" name="passwordBis" id="passwordBis" required>
+          <p id="passwordBisErrorMsg"></p>
+        </div>
+        <div class="cart__order__form__question">
+          <label for="email">Email: </label>
+          <input type="email" name="email" id="email" required>
+          <p id="emailErrorMsg"></p>
+        </div>
+        <div class="cart__order__form__submit">
+          <input type="reset" value="Réinitialiser" id="reset">
+          <input type="button" value="Envoyer" id="envoyer">
+        </div>
+      </form>
 
 
     <script src="script.js"></script>
