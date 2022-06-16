@@ -84,7 +84,7 @@ artmyslide3.onmouseout = function() {
 //Validation de formulaire avec regex
 function getForm() {
   // Ajout des Regex
-  let form = document.querySelector(".cart__order__form");
+  let form = document.querySelector(".form-row-total");
 
   //Création des expressions régulières
   let pseudoRegExp = new RegExp("^([a-zA-Z0-9-_]{5,40})$");
@@ -156,7 +156,9 @@ function getForm() {
           emailErrorMsg.innerHTML = 'Veuillez renseigner votre email.';
       }
   };
+  
 }
+
 getForm();
 
     
